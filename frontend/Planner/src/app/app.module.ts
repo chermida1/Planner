@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarViewComponent } from './components/calendar-view/calendar-view.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalendarComponent,
+    CalendarViewComponent
   ],
   imports: [
     BrowserModule
