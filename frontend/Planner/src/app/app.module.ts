@@ -1,3 +1,4 @@
+import { ScheduleModule } from 'primeng/schedule';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,7 +15,8 @@ import { CalendarViewComponent } from './components/calendar-view/calendar-view.
     CalendarViewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ScheduleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
