@@ -27,8 +27,8 @@ public class Address {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(long addressId, String street, String city, String state, String zipcode) {
-		this.addressId = addressId;
+	public Address(/*long addressId,*/ String street, String city, String state, String zipcode) {
+		/*this.addressId = addressId;*/
 		this.street = street;
 		this.city = city;
 		this.state = state;

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Required;
@@ -31,6 +32,7 @@ public class Patient {
 	private String phoneNumberTwo;
 	@Column(name = "EMAIL")
 	private String email;
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ADDRESS_ID")
 	private Address address;
 	@OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
@@ -41,16 +43,16 @@ public class Patient {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Patient(Integer patientId, String firstname, String lastname, String phoneNumberOne, String phoneNumberTwo,
-			String email, Address address, List<Memos> memos) {
+	public Patient(/*Integer patientId,*/ String firstname, String lastname, String phoneNumberOne, String phoneNumberTwo,
+			String email, List<Memos> memos) {
 		super();
-		this.patientId = patientId;
+		// this.patientId = patientId;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.phoneNumberOne = phoneNumberOne;
 		this.phoneNumberTwo = phoneNumberTwo;
 		this.email = email;
-		this.address = address;
+		// this.address = address;
 		this.memos = memos;
 	}
 
@@ -127,7 +129,7 @@ public class Patient {
 	public String toString() {
 		return "Patient [patientId=" + patientId + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", phoneNumberOne=" + phoneNumberOne + ", phoneNumberTwo=" + phoneNumberTwo + ", email=" + email
-				+ ", address=" + address + ", memos=" + memos + "]";
+				+ ", address=" + address +  ", memos=" + memos + "]";
 	}
 
 }

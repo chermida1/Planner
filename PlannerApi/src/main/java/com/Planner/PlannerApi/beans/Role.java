@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PLANNER_ROLES")
+@Table(name = "ROLES")
 public class Role {
 
 	public static final transient Role EMPLOYEE = new Role(1, "EMPLOYEE");
