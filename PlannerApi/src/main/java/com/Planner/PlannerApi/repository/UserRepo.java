@@ -1,5 +1,9 @@
 package com.Planner.PlannerApi.repository;
 
-public class UserRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Planner.PlannerApi.beans.User;
+
+public interface UserRepo extends JpaRepository<User, Integer>{
 
 }

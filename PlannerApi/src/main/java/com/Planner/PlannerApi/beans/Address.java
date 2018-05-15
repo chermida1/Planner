@@ -12,7 +12,7 @@ public class Address {
 	@Id
 	@GeneratedValue
 	@Column(name = "ADDRESS_ID")
-	private long addressId;
+	private Integer addressId;
 	@Column(name = "ADDRESS_STREET", nullable = false, length = 250)
 	private String street;
 	@Column(name = "ADDRESS_CITY", nullable = false, length = 50)
@@ -39,7 +39,7 @@ public class Address {
 		return addressId;
 	}
 
-	public void setAddressId(long addressId) {
+	public void setAddressId(Integer addressId) {
 		this.addressId = addressId;
 	}
 

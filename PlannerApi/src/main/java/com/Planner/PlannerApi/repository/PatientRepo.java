@@ -1,5 +1,9 @@
 package com.Planner.PlannerApi.repository;
 
-public interface PatientRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Planner.PlannerApi.beans.Patient;
+
+public interface PatientRepo extends JpaRepository<Patient, Integer> {
 
 }
