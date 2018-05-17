@@ -9,9 +9,9 @@ import javax.persistence.Table;
 @Table(name = "ROLES")
 public class Role {
 
-	public static final transient Role EMPLOYEE = new Role(1, "EMPLOYEE");
+	// public static final transient Role EMPLOYEE = new Role(1, "EMPLOYEE");
 
-	public static final transient Role MANAGER = new Role(2, "MANAGER");
+	// public static final transient Role MANAGER = new Role(2, "MANAGER");
 
 	@Id
 	@Column(name = "ROLE_ID")

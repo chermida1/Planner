@@ -1,12 +1,13 @@
 package com.Planner.PlannerApi.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Required;
@@ -26,9 +27,10 @@ public class User {
 	private String password;
 	@Column(name = "EMAIL")
 	private String email;
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ROLE_ID")
-	private Role role;
+	//@OneToOne(fetch = FetchType.EAGER)
+//	@ManyToOne(cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
+//	@JoinColumn(name = "ROLE_ID")
+//	private Role role;
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
 
@@ -37,7 +39,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Integer userId, String firstname, String lastname, String password, String email, Role role,
+	public User(Integer userId, String firstname, String lastname, String password, String email, /*Role role,*/
 			String phoneNumber) {
 		super();
 		this.userId = userId;
@@ -45,7 +47,7 @@ public class User {
 		this.lastname = lastname;
 		this.password = password;
 		this.email = email;
-		this.role = role;
+		// this.role = role;
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -93,13 +95,13 @@ public class User {
 		this.email = email;
 	}
 
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
+//	public Role getRole() {
+//		return role;
+//	}
+//
+//	public void setRole(Role role) {
+//		this.role = role;
+//	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -113,7 +115,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", firstname=" + firstname + ", lastname=" + lastname + ", username="
-				+ ", email=" + email + ", role=" + role + ", phoneNumber=" + phoneNumber + "]";
+				+ ", email=" + email + ", role=" + /*role +*/ ", phoneNumber=" + phoneNumber + "]";
 	}
 
 }

@@ -1,5 +1,14 @@
 package com.Planner.PlannerApi.service;
 
-public class UserService {
+import java.util.List;
+
+import com.Planner.PlannerApi.beans.User;
+
+public interface UserService {
+	public User getUser(Integer id);
+
+	public List<User> getAllUsers();
+
+	public boolean addUser(User newUser);
 
 }
