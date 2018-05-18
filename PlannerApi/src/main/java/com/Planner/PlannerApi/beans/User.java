@@ -28,9 +28,9 @@ public class User {
 	@Column(name = "EMAIL")
 	private String email;
 	//@OneToOne(fetch = FetchType.EAGER)
-//	@ManyToOne(cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
-//	@JoinColumn(name = "ROLE_ID")
-//	private Role role;
+	@ManyToOne(cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
+	@JoinColumn(name = "ROLE_ID")
+	private Role role;
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
 
@@ -95,13 +95,13 @@ public class User {
 		this.email = email;
 	}
 
-//	public Role getRole() {
-//		return role;
-//	}
-//
-//	public void setRole(Role role) {
-//		this.role = role;
-//	}
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;

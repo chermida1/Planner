@@ -1,5 +1,11 @@
 package com.Planner.PlannerApi.service;
 
-public class PatientService {
+import java.util.List;
 
+import com.Planner.PlannerApi.beans.Patient;
+
+public interface PatientService {
+	public void createPatient(Patient newPatient);
+	
+	public List<Patient> getAllPatients();
 }

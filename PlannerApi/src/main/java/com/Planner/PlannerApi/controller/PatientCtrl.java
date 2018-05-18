@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Planner.PlannerApi.beans.User;
-import com.Planner.PlannerApi.service.UserService;
+import com.Planner.PlannerApi.beans.Patient;
+import com.Planner.PlannerApi.service.PatientService;
 
 @RestController
-public class UserCtrl {
+public class PatientCtrl {
 	@Autowired
-	UserService userService;
+	PatientService patientService;
 
-	@GetMapping("/getAllUsers")
-	public List<User> getAllUsers(){
-		return userService.getAllUsers();
+	@GetMapping("/getAllPatients")
+	public List<Patient> getAllPatients() {
+		return patientService.getAllPatients();
 	}
 	
-	@PostMapping("/createUser")
-	public void createUser(@RequestBody User newUser) {
-		userService.addUser(newUser);
+	@PostMapping("/createPatient")
+	public void createPatient(@RequestBody Patient newPatient) {
+		patientService.createPatient(newPatient);
 	}
 	
 }

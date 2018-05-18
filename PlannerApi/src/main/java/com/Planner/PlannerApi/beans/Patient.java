@@ -3,14 +3,15 @@ package com.Planner.PlannerApi.beans;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Required;
@@ -32,9 +33,9 @@ public class Patient {
 	private String phoneNumberTwo;
 	@Column(name = "EMAIL")
 	private String email;
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ADDRESS_ID")
-	private Address address;
+//	@ManyToOne(cascade=CascadeType.REMOVE, fetch = FetchType.EAGER)
+//	@JoinColumn(name = "ADDRESS_ID")
+//	private Address address;
 	@OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
 	private List<Memos> memos = new ArrayList<Memos>();
 
@@ -99,14 +100,14 @@ public class Patient {
 		this.phoneNumberTwo = phoneNumberTwo;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	@Required
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+//	public Address getAddress() {
+//		return address;
+//	}
+//
+//	@Required
+//	public void setAddress(Address address) {
+//		this.address = address;
+//	}
 
 	public List<Memos> getMemos() {
 		return memos;
@@ -129,7 +130,7 @@ public class Patient {
 	public String toString() {
 		return "Patient [patientId=" + patientId + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", phoneNumberOne=" + phoneNumberOne + ", phoneNumberTwo=" + phoneNumberTwo + ", email=" + email
-				+ ", address=" + address +  ", memos=" + memos + "]";
+				+ ", address=" + /*address +*/  ", memos=" + memos + "]";
 	}
 
 }

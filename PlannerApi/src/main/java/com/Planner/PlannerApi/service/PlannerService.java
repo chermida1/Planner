@@ -1,5 +1,4 @@
 package com.Planner.PlannerApi.service;
 
-public class PlannerService {
-
+public interface PlannerService {
 }
