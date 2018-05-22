@@ -33,9 +33,9 @@ public class Patient {
 	private String phoneNumberTwo;
 	@Column(name = "EMAIL")
 	private String email;
-//	@ManyToOne(cascade=CascadeType.REMOVE, fetch = FetchType.EAGER)
-//	@JoinColumn(name = "ADDRESS_ID")
-//	private Address address;
+	@ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "ADDRESS_ID")
+	private Address address;
 	@OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
 	private List<Memos> memos = new ArrayList<Memos>();
 
@@ -100,14 +100,14 @@ public class Patient {
 		this.phoneNumberTwo = phoneNumberTwo;
 	}
 
-//	public Address getAddress() {
-//		return address;
-//	}
-//
-//	@Required
-//	public void setAddress(Address address) {
-//		this.address = address;
-//	}
+	public Address getAddress() {
+		return address;
+	}
+
+	//@Required
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public List<Memos> getMemos() {
 		return memos;
