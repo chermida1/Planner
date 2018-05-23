@@ -1,3 +1,5 @@
+import { HttpClient } from 'selenium-webdriver/http';
+import { LoginService } from './services/login.service';
 import { ScheduleModule } from 'primeng/schedule';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -27,9 +29,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     ScheduleModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClient
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
