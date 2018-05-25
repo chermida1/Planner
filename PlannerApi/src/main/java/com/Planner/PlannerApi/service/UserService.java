@@ -11,4 +11,5 @@ public interface UserService {
 
 	public boolean addUser(User newUser);
 
+	public User loginUser(User loginUser);
 }

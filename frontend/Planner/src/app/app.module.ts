@@ -1,8 +1,10 @@
-import { HttpClient } from 'selenium-webdriver/http';
+
+import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { ScheduleModule } from 'primeng/schedule';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -13,8 +15,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  { path: 'home', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 
 ];
 
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     BrowserModule,
     ScheduleModule,
     RouterModule.forRoot(appRoutes),
-    HttpClient
+    HttpClientModule,
+    FormsModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

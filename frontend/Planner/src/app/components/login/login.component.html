@@ -8,17 +8,17 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" placeholder="E-mail address">
+            <input [(ngModel)]="email" name="email" type="text" placeholder="E-mail address">
           </div>
         </div>
       </div>
       <div class="field">
         <div class="ui left icon input">
           <i class="lock icon"></i>
-          <input type="text" placeholder="Password">
+          <input [(ngModel)]="password" name="password" type="text" placeholder="Password">
         </div>
       </div>
-      <button class="ui button" type="submit">Submit</button>
+      <button (click)="login()" class="ui button" type="submit">Login</button>
     </form>
     <div class="ui message">
       Need to

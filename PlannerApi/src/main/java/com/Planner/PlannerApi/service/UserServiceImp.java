@@ -44,4 +44,15 @@ public class UserServiceImp implements UserService {
 		return false;
 	}
 
+	@Override
+	public User loginUser(User loginUser) {
+		User result = new User();
+		User user = repo.findByEmail(loginUser.getEmail());
+		if(user != null && user.getPassword().equals(loginUser.getPassword())) {
+			result = user;
+		}
+		return result;
+	}
+
+	
 }
